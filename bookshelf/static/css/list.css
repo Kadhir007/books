@@ -1,0 +1,58 @@
+/* styles.css */
+
+/* Style for the container of each book */
+.book-container {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    margin-bottom: 20px;
+    border: 1px solid #e0e0e0; /* Light gray border */
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* Style for the book image */
+.book-image {
+    width: 100px; /* Fixed width */
+    height: 150px; /* Fixed height */
+    margin-right: 20px;
+}
+
+/* Style for the book details */
+.book-details {
+    flex-grow: 1;
+}
+
+/* Style for the book title */
+.book-title {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #333; /* Dark text color */
+}
+
+/* Style for the book author */
+.book-author {
+    font-style: italic;
+    color: #666;
+}
+
+/* Style for the book ISBN */
+.book-isbn {
+    color: #888; /* Lighter text color */
+}
+
+/* Style for the genres */
+.book-genres {
+    margin-top: 10px;
+}
+
+/* Style for each genre */
+.book-genre {
+    display: inline-block;
+    background-color: #f0f0f0; /* Light gray background */
+    padding: 3px 8px;
+    margin-right: 5px;
+    border-radius: 3px;
+    font-size: 12px;
+    color: #666;
+}

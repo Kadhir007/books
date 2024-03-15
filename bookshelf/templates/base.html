@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Books and Chat</h1>
+        </div>
+    </header>
+    <nav>
+        <div class="container">
+            <a href="{% url 'book_list' %}">Home</a>
+             <a href="{% url 'add_book' %}">Add books</a>
+            <a href="#">Chat</a>
+        </div>
+    </nav>
+    <div class="container">
+        {% block content %}
+        {% endblock content %}
+    </div>
+</body>
+</html>
