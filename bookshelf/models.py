@@ -21,4 +21,4 @@ class Book(models.Model):
     genre = models.ManyToManyField(Genre, related_name='books')
 
     def __str__(self):
-        return self.title[:10]
+        return self.title
