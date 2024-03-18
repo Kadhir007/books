@@ -2,7 +2,8 @@
 {% block content %}
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/list.css' %}">
-    {% for book in book_list %}
+    {% if book_list %}
+        {% for book in book_list %}
         <div class="book-container">
             <div>
                 <a href="{% url 'book_detail' book.pk %}">
@@ -25,4 +26,7 @@
             </div>
         </div>
     {% endfor %}
+        {% else %}
+         <div class="book-title">No books available</div>
+    {% endif %}
 {% endblock %}

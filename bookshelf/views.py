@@ -1,6 +1,8 @@
 from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView
 from bookshelf.models import Book
 from django.urls import reverse_lazy
+from django.shortcuts import render
+from django.db.models import Q
 # Create your views here.
 class BookListView(ListView):
     model = Book
@@ -29,3 +31,12 @@ class UpdateBookView(UpdateView):
     fields = '__all__'
     success_url = reverse_lazy('book_list')
 
+def search_results(request):
+    query = request.GET.get('query')
+    results = Book.objects.none()
+    if query:
+        results = Book.objects.filter(
+            Q(title__icontains=query) | Q(author__name__icontains=query) | Q(genre__name__icontains=query)
+        ).distinct()
+
+    return render(request, 'list.html', {'book_list': results})

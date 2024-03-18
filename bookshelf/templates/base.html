@@ -13,10 +13,18 @@
         </div>
     </header>
     <nav>
-        <div class="container">
+        <div class="container" style="display: flex">
             <a href="{% url 'book_list' %}">Home</a>
              <a href="{% url 'add_book' %}">Add books</a>
             <a href="#">Chat</a>
+            <div style="margin-top: 9px; position: absolute; right: 10px">
+                <form method="GET" action="{% url 'search_results' %}">
+                <label>
+                    <input type="text" name="query" placeholder="Search...">
+                </label>
+                <button type="submit">Search</button>
+            </form>
+            </div>
         </div>
     </nav>
     <div class="container">
